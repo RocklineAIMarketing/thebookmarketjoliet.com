@@ -1,1 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trade & Buy | The Book Market – Crest Hill, IL</title>
+  <meta name="description" content="Buy used books at 40% off publisher price, trade your old books for store credit, or donate at The Book Market in Crest Hill, IL. Serving Joliet since 1977." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1108;
+      --green: #5a7a5c;
+      --green-light: #6e9470;
+      --gold: #b8913a;
+      --gold-light: #d4aa55;
+      --cream: #f5f0e6;
+      --cream-dark: #ede7d8;
+      --warm-white: #faf7f2;
+      --text: #2c1f12;
+      --text-muted: #6b5344;
+      --nav-h: 68px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--text); }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
+    /* ===== HEADER ===== */
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      height: var(--nav-h); background: var(--ink);
+      display: flex; align-items: center;
+      border-bottom: 2px solid var(--gold);
+    }
+    .header-inner {
+      width: 100%; max-width: 1200px; margin: 0 auto;
+      padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; }
+    .logo-icon {
+      width: 38px; height: 38px; background: var(--green);
+      border: 1px solid var(--gold); border-radius: 3px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    }
+    .logo-text .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 700; color: var(--gold-light); letter-spacing: 0.02em;
+    }
+    .logo-text .sub { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: #888; margin-top: 1px; }
+    nav { display: flex; align-items: center; gap: 2px; }
+    nav a {
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #bbb; padding: 7px 14px; border-radius: 2px;
+      transition: color 0.2s, background 0.2s;
+    }
+    nav a:hover, nav a.active { color: var(--gold-light); background: rgba(184,145,58,0.1); }
+    .nav-cta {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold-light);
+      border: 1px solid rgba(184,145,58,0.5); padding: 7px 16px; border-radius: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--ink); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold-light); transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; top: var(--nav-h); left: 0; right: 0;
+      background: var(--ink); z-index: 999; border-bottom: 2px solid var(--gold);
+      flex-direction: column; padding: 8px 0 20px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 13px 28px; font-size: 0.85rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #ccc;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .mobile-menu a:hover { color: var(--gold-light); }
+    .mobile-menu .m-contact { padding: 16px 28px; color: var(--gold-light); font-size: 0.85rem; }
+
+    /* ===== SHARED ===== */
+    .section { padding: 88px 32px; }
+    .section-inner { max-width: 1060px; margin: 0 auto; }
+    .eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase;
+      font-weight: 700; color: var(--green); margin-bottom: 10px;
+    }
+    .eyebrow-light { color: var(--gold); }
+    h2.heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+      line-height: 1.15; color: var(--ink); margin-bottom: 20px;
+    }
+    h2.heading em { font-style: italic; color: var(--green); }
+    h2.heading-light { color: #fff; }
+    h2.heading-light em { color: var(--gold-light); }
+    .rule { width: 48px; height: 2px; background: var(--gold); margin-bottom: 28px; }
+    p.body-text { font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); max-width: 680px; margin-bottom: 16px; }
+    p.body-text-light { color: #bbb; }
+    .btn {
+      display: inline-block; padding: 12px 28px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      border-radius: 2px; transition: all 0.2s;
+    }
+    .btn-primary { background: var(--green); color: #fff; border: 2px solid var(--green); }
+    .btn-primary:hover { background: var(--green-light); border-color: var(--green-light); }
+    .btn-outline-gold { background: transparent; color: var(--gold-light); border: 2px solid var(--gold); }
+    .btn-outline-gold:hover { background: var(--gold); color: var(--ink); }
+    .btn-outline-dark { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    .btn-outline-dark:hover { background: var(--ink); color: var(--cream); }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      background: var(--ink);
+      padding: 72px 32px 80px; text-align: center;
+      border-bottom: 2px solid rgba(184,145,58,0.3);
+    }
+    .page-hero .eyebrow { color: var(--gold); margin-bottom: 14px; }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 700;
+      line-height: 1.1; color: #fff; margin-bottom: 18px;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--gold-light); }
+    .page-hero p { font-size: 1rem; color: #999; max-width: 520px; margin: 0 auto; line-height: 1.75; }
+
+    /* ===== STATS BAND ===== */
+    .stats-band {
+      background: var(--green);
+      background-image: linear-gradient(135deg, #5a7a5c 0%, #3d5e3f 100%);
+      border-top: 2px solid rgba(255,255,255,0.15);
+      border-bottom: 2px solid rgba(0,0,0,0.15);
+      padding: 56px 32px;
+    }
+    .stats-inner {
+      max-width: 1060px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+    }
+    .stat-block {
+      padding: 36px 32px; text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+    .stat-block:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4rem); font-weight: 700;
+      color: #fff; line-height: 1; margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(255,255,255,0.75); line-height: 1.5;
+    }
+    .stat-sub {
+      font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 6px;
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+    }
+
+    /* ===== VIRTUAL TOUR ===== */
+    .tour-section {
+      background: var(--warm-white);
+      padding: 72px 32px;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .tour-inner { max-width: 1060px; margin: 0 auto; }
+    .tour-inner .eyebrow { margin-bottom: 10px; }
+    .tour-inner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700;
+      color: var(--ink); margin-bottom: 8px; line-height: 1.2;
+    }
+    .tour-inner h2 em { font-style: italic; color: var(--green); }
+    .tour-inner p { font-size: 0.97rem; color: var(--text-muted); margin-bottom: 32px; line-height: 1.7; }
+    .tour-frame-wrap {
+      border: 2px solid rgba(184,145,58,0.3);
+      border-radius: 4px; overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+    }
+    .tour-frame-wrap iframe { width: 100%; height: 480px; display: block; border: none; }
+
+    /* ===== MAP SECTION ===== */
+    .map-section { background: var(--warm-white); padding: 88px 32px; }
+    .map-wrapper {
+      margin-top: 40px;
+      border: 2px solid rgba(184,145,58,0.3);
+      border-radius: 4px; overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+    }
+    .map-wrapper iframe { width: 100%; height: 420px; display: block; border: none; }
+
+    /* ===== PROCESS STEPS ===== */
+    .process-section { background: var(--warm-white); }
+    .steps { margin-top: 56px; display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: grid; grid-template-columns: 72px 1fr;
+      gap: 0 36px; padding: 36px 0;
+      border-bottom: 1px solid var(--cream-dark);
+      align-items: start;
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.6rem; font-weight: 700; line-height: 1;
+      color: rgba(90,122,92,0.2); padding-top: 2px;
+      text-align: center;
+    }
+    .step-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 700; color: var(--ink);
+      margin-bottom: 10px; line-height: 1.2;
+    }
+    .step-body p { font-size: 0.97rem; line-height: 1.8; color: var(--text-muted); max-width: 640px; }
+    .step-tag {
+      display: inline-block; margin-top: 14px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--green); border: 1px solid var(--green);
+      padding: 3px 10px; border-radius: 2px;
+    }
+
+    /* ===== WHAT WE ACCEPT ===== */
+    .accept-section { background: var(--ink); }
+    .accept-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px;
+    }
+    .accept-card {
+      border-radius: 3px; padding: 36px 32px;
+    }
+    .accept-card.yes { background: rgba(90,122,92,0.12); border: 1px solid rgba(90,122,92,0.4); }
+    .accept-card.no { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); }
+    .accept-card-header {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+    }
+    .accept-icon { font-size: 1.4rem; }
+    .accept-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 700;
+    }
+    .accept-card.yes h3 { color: #a8d4aa; }
+    .accept-card.no h3 { color: #888; }
+    .accept-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .accept-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.93rem; line-height: 1.5;
+    }
+    .accept-card.yes .accept-list li { color: #ccc; }
+    .accept-card.no .accept-list li { color: #666; }
+    .accept-list li::before {
+      font-size: 0.7rem; flex-shrink: 0; margin-top: 3px;
+    }
+    .accept-card.yes .accept-list li::before { content: '✓'; color: #a8d4aa; font-weight: 700; }
+    .accept-card.no .accept-list li::before { content: '✕'; color: #555; font-weight: 700; }
+    .accept-note {
+      margin-top: 28px; padding: 18px 24px;
+      background: rgba(184,145,58,0.08); border-left: 3px solid var(--gold);
+      border-radius: 0 3px 3px 0;
+    }
+    .accept-note p { font-size: 0.9rem; color: #aaa; line-height: 1.7; }
+    .accept-note strong { color: var(--gold-light); }
+
+    /* ===== STORE CREDIT ===== */
+    .credit-section { background: var(--cream); }
+    .credit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-top: 48px; }
+    .credit-visual {
+      background: var(--ink); border-radius: 4px;
+      border: 2px solid rgba(184,145,58,0.3);
+      padding: 48px 36px; text-align: center;
+      box-shadow: 8px 8px 0 var(--green);
+    }
+    .credit-visual .big-label {
+      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 12px;
+    }
+    .credit-visual .store-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 700; color: #fff; margin-bottom: 32px;
+    }
+    .credit-visual .credit-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem; font-weight: 700; color: var(--gold-light); line-height: 1;
+      margin-bottom: 6px;
+    }
+    .credit-visual .credit-label {
+      font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: #666;
+      margin-bottom: 32px;
+    }
+    .credit-visual .credit-divider { height: 1px; background: rgba(184,145,58,0.2); margin-bottom: 24px; }
+    .credit-visual .credit-tagline { font-size: 0.85rem; color: #888; font-style: italic; font-family: 'Cormorant Garamond', serif; }
+    .credit-points { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+    .credit-points li {
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .credit-points .pt-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(90,122,92,0.15); border: 1px solid rgba(90,122,92,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; flex-shrink: 0; margin-top: 2px;
+    }
+    .credit-points h4 {
+      font-size: 0.9rem; font-weight: 700; color: var(--ink); margin-bottom: 4px;
+    }
+    .credit-points p { font-size: 0.88rem; line-height: 1.65; color: var(--text-muted); }
+
+    /* ===== CTA BAND ===== */
+    .cta-band {
+      background: var(--green);
+      background-image: linear-gradient(135deg, #5a7a5c 0%, #3d5e3f 100%);
+      padding: 72px 32px; text-align: center;
+      border-top: 2px solid rgba(255,255,255,0.15);
+    }
+    .cta-band h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700;
+      color: #fff; margin-bottom: 14px;
+    }
+    .cta-band p { font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 500px; margin: 0 auto 32px; line-height: 1.7; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-white { background: #fff; color: var(--green); border: 2px solid #fff; }
+    .btn-white:hover { background: transparent; color: #fff; }
+    .btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.6); }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0d0a06; border-top: 2px solid var(--gold);
+      padding: 56px 32px 28px;
+    }
+    .footer-grid {
+      max-width: 1060px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.4fr 1fr;
+      gap: 64px; padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; color: var(--gold-light); font-weight: 700; margin-bottom: 10px;
+    }
+    .footer-brand p { font-size: 0.87rem; color: #666; line-height: 1.7; margin-bottom: 20px; }
+    .fb-link {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: #1877f2; color: #fff; padding: 9px 16px; border-radius: 3px;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      transition: opacity 0.2s;
+    }
+    .fb-link:hover { opacity: 0.85; }
+    .fb-link svg { width: 16px; height: 16px; fill: #fff; }
+    footer h4 {
+      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px; font-weight: 700;
+    }
+    .footer-nap { list-style: none; }
+    .footer-nap li { font-size: 0.87rem; color: #777; margin-bottom: 7px; line-height: 1.5; }
+    .footer-nap a { color: var(--gold-light); }
+    .footer-nap .hours-label {
+      color: #555; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+      margin-top: 14px; margin-bottom: 6px; display: block;
+    }
+    .footer-nap .hours-note { font-size: 0.75rem; color: #555; font-style: italic; }
+    .footer-bottom {
+      max-width: 1060px; margin: 24px auto 0;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.75rem; color: #444; flex-wrap: wrap; gap: 8px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 960px) {
+      nav, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .accept-grid { grid-template-columns: 1fr; }
+      .credit-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 64px 20px; }
+      .header-inner { padding: 0 20px; }
+      .page-hero { padding: 56px 20px 64px; }
+      .step { grid-template-columns: 48px 1fr; gap: 0 20px; }
+      .step-num { font-size: 2.6rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .tour-frame-wrap iframe { height: 320px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="https://thebookmrketjoliet.com" class="logo-wrap">
+      <div class="logo-icon">📚</div>
+      <div class="logo-text">
+        <div class="name">The Book Market</div>
+        <div class="sub">Crest Hill, IL · Est. 1977</div>
+      </div>
+    </a>
+    <nav>
+      <a href="https://thebookmrketjoliet.com">Home</a>
+      <a href="https://thebookmrketjoliet.com/trade" class="active">Trade &amp; Buy</a>
+      <a href="https://thebookmrketjoliet.com/events">Events</a>
+      <a href="https://thebookmrketjoliet.com/reviews">Reviews</a>
+      <a href="https://thebookmrketjoliet.com/contact" class="nav-cta">Contact</a>
+    </nav>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="https://thebookmrketjoliet.com">Home</a>
+  <a href="https://thebookmrketjoliet.com/trade">Trade &amp; Buy</a>
+  <a href="https://thebookmrketjoliet.com/events">Events</a>
+  <a href="https://thebookmrketjoliet.com/reviews">Reviews</a>
+  <a href="https://thebookmrketjoliet.com/contact">Contact &amp; Hours</a>
+  <div class="m-contact"><a href="tel:8157444240">(815) 744-4240</a></div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="eyebrow">Trade &amp; Buy</div>
+  <h1>Your Books Deserve<br><em>A Second Life</em></h1>
+  <p>Shop thousands of titles at 40% off, trade in books you've finished, earn store credit, or simply donate. Here's how it all works.</p>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section process-section">
+  <div class="section-inner">
+    <div class="eyebrow">The Process</div>
+    <h2 class="heading">Simple, Fair &amp; <em>Built for Readers</em></h2>
+    <div class="rule"></div>
+    <p class="body-text">We've kept this as straightforward as possible — no complicated systems, no membership fees. Just books and people who love them.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>Shop Over 250,000 Titles at 40% Off</h3>
+          <p>With over 250,000 books on our shelves, there's something for every kind of reader — paperbacks, hardcovers, graphic novels, audiobooks, children's books, and more. Every single one is priced at 40% off the original publisher price. No coupons, no membership, no catch. That's just how we do it.</p>
+          <span class="step-tag">For Everyone</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>Bring In Books &amp; Trade Them</h3>
+          <p>Got a stack of books collecting dust? Bring them in during store hours and we'll take a look. Books in good condition can be traded straight across — you hand us yours, you walk out with something new. It's one of the best deals in the building, honestly.</p>
+          <span class="step-tag">Trade In</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>Earn Store Credit</h3>
+          <p>Prefer to sell rather than trade straight across? We offer store credit for books we buy from you. Bring them in, we'll evaluate them on the spot — no appointment needed for smaller collections. Store credit can be applied to up to 50% of any purchase total, so you can mix it with cash to stretch your budget even further. For large collections, give us a call ahead of time so we can set aside the time to go through everything properly.</p>
+          <span class="step-tag">Store Credit</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <h3>Donate &amp; Give Books a New Home</h3>
+          <p>Not looking for anything in return? We happily accept donations. Every book you drop off finds its way to a new reader — and helps us keep prices low for the whole community. It's a small act that goes a long way.</p>
+          <span class="step-tag">Donations Welcome</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="stats-inner">
+    <div class="stat-block">
+      <div class="stat-num">250,000+</div>
+      <div class="stat-label">Books on Our Shelves</div>
+      <div class="stat-sub">Always rotating, always growing</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">40%</div>
+      <div class="stat-label">Off Publisher Price</div>
+      <div class="stat-sub">Every title, every day</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">47+</div>
+      <div class="stat-label">Years Serving Chicagoland</div>
+      <div class="stat-sub">Open since 1977</div>
+    </div>
+  </div>
+</div>
+
+<!-- VIRTUAL TOUR -->
+<div class="tour-section">
+  <div class="tour-inner">
+    <div class="eyebrow">Take a Look Around</div>
+    <h2>Explore the Store<br><em>Before You Visit</em></h2>
+    <div class="rule"></div>
+    <p>Step inside The Book Market with our Google Virtual Tour — get a feel for the shelves, the space, and the atmosphere before you walk through the door.</p>
+    <div class="tour-frame-wrap">
+      <iframe src="https://www.google.com/maps/embed?pb=!4v1780636815556!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQzBoY2pfUHc.!2m2!1d41.56471914695704!2d-88.14116335863785!3f40!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE ACCEPT -->
+<section class="section accept-section">
+  <div class="section-inner">
+    <div class="eyebrow eyebrow-light">Before You Bring Them In</div>
+    <h2 class="heading heading-light">What We <em style="color:var(--gold-light);">Do &amp; Don't</em> Accept</h2>
+    <div class="rule"></div>
+    <p class="body-text body-text-light">We'd love to take every book that comes through the door — but to keep our shelves fresh and valuable for shoppers, we do have to be selective. Here's what we're generally looking for.</p>
+
+    <div class="accept-grid">
+      <div class="accept-card yes">
+        <div class="accept-card-header">
+          <span class="accept-icon">✅</span>
+          <h3>We Accept</h3>
+        </div>
+        <ul class="accept-list">
+          <li>Fiction &amp; non-fiction novels (paperback &amp; hardcover)</li>
+          <li>Children's &amp; young adult books</li>
+          <li>Graphic novels &amp; comics</li>
+          <li>Audiobooks in good condition</li>
+          <li>Religious texts &amp; devotionals</li>
+          <li>Mystery, thriller, sci-fi &amp; fantasy</li>
+          <li>Romance &amp; historical fiction</li>
+          <li>Sports, biography &amp; memoir</li>
+          <li>Textbooks (subject to demand)</li>
+          <li>Books in clean, readable condition</li>
+        </ul>
+      </div>
+      <div class="accept-card no">
+        <div class="accept-card-header">
+          <span class="accept-icon">🚫</span>
+          <h3>We Don't Accept</h3>
+        </div>
+        <ul class="accept-list">
+          <li>Books with heavy water damage or mold</li>
+          <li>Books with missing pages or torn covers</li>
+          <li>Heavily written-in or highlighted copies</li>
+          <li>Encyclopedias &amp; outdated reference sets</li>
+          <li>Reader's Digest condensed books</li>
+          <li>Magazines (unless in excellent condition)</li>
+          <li>Very old textbooks with outdated editions</li>
+          <li>Books with strong odors or staining</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accept-note">
+      <p><strong>Not sure if your books qualify?</strong> Don't stress — just bring them in and we'll take a look together. We'd rather you bring something uncertain than leave a good book at home. When in doubt, call us at <a href="tel:8157444240" style="color:var(--gold-light);">(815) 744-4240</a> and we're happy to talk it through.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORE CREDIT -->
+<section class="section credit-section">
+  <div class="section-inner">
+    <div class="eyebrow">Store Credit</div>
+    <h2 class="heading">Turn Old Books Into<br><em>New Ones</em></h2>
+    <div class="rule"></div>
+
+    <div class="credit-grid">
+      <div class="credit-visual">
+        <div class="big-label">How Store Credit Works</div>
+        <div class="store-name">The Book Market</div>
+        <div style="margin: 24px 0; display:flex; flex-direction:column; gap:16px;">
+          <div style="display:flex; align-items:center; gap:14px; text-align:left;">
+            <div style="width:40px;height:40px;border-radius:50%;background:rgba(90,122,92,0.25);border:1px solid rgba(90,122,92,0.5);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">📚</div>
+            <div style="font-size:0.88rem;color:#aaa;line-height:1.5;">Bring in books we can use</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="width:1px;height:24px;background:rgba(184,145,58,0.2);margin-left:19px;flex-shrink:0;"></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:14px; text-align:left;">
+            <div style="width:40px;height:40px;border-radius:50%;background:rgba(90,122,92,0.25);border:1px solid rgba(90,122,92,0.5);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">🔍</div>
+            <div style="font-size:0.88rem;color:#aaa;line-height:1.5;">We evaluate them in person</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="width:1px;height:24px;background:rgba(184,145,58,0.2);margin-left:19px;flex-shrink:0;"></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:14px; text-align:left;">
+            <div style="width:40px;height:40px;border-radius:50%;background:rgba(184,145,58,0.15);border:1px solid rgba(184,145,58,0.4);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">🏷️</div>
+            <div style="font-size:0.88rem;color:#aaa;line-height:1.5;">Receive store credit on the spot</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="width:1px;height:24px;background:rgba(184,145,58,0.2);margin-left:19px;flex-shrink:0;"></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:14px; text-align:left;">
+            <div style="width:40px;height:40px;border-radius:50%;background:rgba(184,145,58,0.15);border:1px solid rgba(184,145,58,0.4);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">🛍️</div>
+            <div style="font-size:0.88rem;color:#aaa;line-height:1.5;">Apply it to up to 50% of your next purchase</div>
+          </div>
+        </div>
+        <div class="credit-divider"></div>
+        <div class="credit-tagline">"Over 250,000 titles to spend it on."</div>
+      </div>
+      <ul class="credit-points">
+        <li>
+          <div class="pt-icon">📦</div>
+          <div>
+            <h4>Bring In Your Books</h4>
+            <p>Drop by during store hours with the books you'd like to sell. No appointment needed for smaller collections — just walk in.</p>
+          </div>
+        </li>
+        <li>
+          <div class="pt-icon">🔍</div>
+          <div>
+            <h4>We Evaluate On the Spot</h4>
+            <p>We go through your books right there and let you know what we can take and what we'd put toward store credit. Fast, friendly, no guesswork.</p>
+          </div>
+        </li>
+        <li>
+          <div class="pt-icon">🏷️</div>
+          <div>
+            <h4>Credit Applied to Your Account</h4>
+            <p>Store credit can be used on any purchase in the store. Stack it up over multiple visits — there's no expiration.</p>
+          </div>
+        </li>
+        <li>
+          <div class="pt-icon">📞</div>
+          <div>
+            <h4>Large Collections? Call Ahead</h4>
+            <p>If you've got boxes of books to bring in, give us a heads up at <a href="tel:8157444240" style="color:var(--green);">(815) 744-4240</a> so we can set aside time to go through everything properly.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="section-inner" style="text-align:center;">
+    <h2>Ready to Bring Your Books In?</h2>
+    <p>We're open Tuesday through Saturday, 11am to 5pm. No appointment needed for most visits — just come on in.</p>
+    <div class="cta-btns">
+      <a href="tel:8157444240" class="btn btn-white">Call Us: (815) 744-4240</a>
+      <a href="https://thebookmrketjoliet.com/contact" class="btn btn-outline-white">Hours &amp; Directions</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-brand-name">The Book Market Sales &amp; Trading Center</div>
+      <p>Serving the Joliet, Crest Hill &amp; Chicagoland communities with quality used books since 1977.</p>
+      <a href="https://www.facebook.com/newandusedbooks/" target="_blank" rel="noopener" class="fb-link">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Follow on Facebook
+      </a>
+    </div>
+    <div>
+      <h4>Visit Us</h4>
+      <ul class="footer-nap">
+        <li>2365 Plainfield Rd.</li>
+        <li>Crest Hill, IL 60403</li>
+        <li><a href="tel:8157444240">(815) 744-4240</a></li>
+        <li><a href="mailto:thebookmarketjoliet@gmail.com">thebookmarketjoliet@gmail.com</a></li>
+        <span class="hours-label">Store Hours</span>
+        <li>Tuesday – Friday: 11:00 AM – 5:00 PM</li>
+        <li>Saturday: 11:00 AM – 5:00 PM</li>
+        <li>Sunday &amp; Monday: Closed</li>
+        <li class="hours-note">Holiday hours may vary. Please call for details.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 The Book Market Sales &amp; Trading Center. All rights reserved.</span>
+    <span>2365 Plainfield Rd., Crest Hill, IL 60403</span>
+  </div>
+</footer>
+
+<script>
+  const ham = document.getElementById('hamburger');
+  const mob = document.getElementById('mobileMenu');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    mob.classList.toggle('open');
+  });
+</script>
+</body>
+</html>
