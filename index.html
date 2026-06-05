@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Book Market | Used Bookstore – Crest Hill, IL</title>
+  <meta name="description" content="The Book Market Sales & Trading Center in Crest Hill, IL – serving the Joliet area since 1977. Used books, novels, audiobooks, graphic novels, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #1a1108;
+      --burgundy: #5a7a5c;
+      --burgundy-light: #6e9470;
+      --gold: #b8913a;
+      --gold-light: #d4aa55;
+      --cream: #f5f0e6;
+      --cream-dark: #ede7d8;
+      --warm-white: #faf7f2;
+      --text: #2c1f12;
+      --text-muted: #6b5344;
+      --nav-h: 68px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color: var(--text); }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ===== HEADER ===== */
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      height: var(--nav-h);
+      background: var(--ink);
+      display: flex; align-items: center;
+      border-bottom: 2px solid var(--gold);
+    }
+    .header-inner {
+      width: 100%; max-width: 1200px; margin: 0 auto;
+      padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; }
+    .logo-icon {
+      width: 38px; height: 38px;
+      background: var(--burgundy);
+      border: 1px solid var(--gold);
+      border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .logo-text .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--gold-light); letter-spacing: 0.02em;
+    }
+    .logo-text .sub {
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: #888; margin-top: 1px;
+    }
+    nav { display: flex; align-items: center; gap: 2px; }
+    nav a {
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #bbb;
+      padding: 7px 14px; border-radius: 2px;
+      transition: color 0.2s, background 0.2s;
+    }
+    nav a:hover, nav a.active { color: var(--gold-light); background: rgba(184,145,58,0.1); }
+    .nav-cta {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold-light);
+      border: 1px solid rgba(184,145,58,0.5);
+      padding: 7px 16px; border-radius: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--ink); }
+
+    /* hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--gold-light); transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; top: var(--nav-h); left: 0; right: 0;
+      background: var(--ink); z-index: 999;
+      border-bottom: 2px solid var(--gold);
+      flex-direction: column;
+      padding: 8px 0 20px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 13px 28px; font-size: 0.85rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #ccc;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .mobile-menu a:hover { color: var(--gold-light); }
+    .mobile-menu .m-contact { padding: 16px 28px; color: var(--gold-light); font-size: 0.85rem; }
+
+    /* ===== VIDEO ===== */
+    .video-section {
+      background: var(--ink);
+      padding: 40px 20px 48px;
+    }
+    .video-inner { max-width: 860px; margin: 0 auto; }
+    .video-eyebrow {
+      text-align: center;
+      font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+    }
+    .video-wrapper {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      border: 2px solid rgba(184,145,58,0.4);
+      border-radius: 4px; overflow: hidden;
+      box-shadow: 0 16px 60px rgba(0,0,0,0.7);
+    }
+    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+    /* ===== SECTION SYSTEM ===== */
+    .section { padding: 88px 32px; }
+    .section-inner { max-width: 1060px; margin: 0 auto; }
+    .eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase;
+      font-weight: 700; color: var(--burgundy); margin-bottom: 10px;
+    }
+    .eyebrow-light { color: var(--gold); }
+    h2.heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; line-height: 1.15;
+      color: var(--ink); margin-bottom: 20px;
+    }
+    h2.heading em { font-style: italic; color: var(--burgundy); }
+    h2.heading-light { color: #fff; }
+    h2.heading-light em { color: var(--gold-light); }
+    .rule { width: 48px; height: 2px; background: var(--gold); margin-bottom: 28px; }
+    p.body-text {
+      font-size: 1.05rem; line-height: 1.8; color: var(--text-muted);
+      max-width: 660px; margin-bottom: 18px;
+    }
+    p.body-text-light { color: #bbb; }
+    .btn {
+      display: inline-block; padding: 12px 28px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      border-radius: 2px; transition: all 0.2s;
+    }
+    .btn-primary { background: var(--burgundy); color: #fff; border: 2px solid var(--burgundy); }
+    .btn-primary:hover { background: var(--burgundy-light); border-color: var(--burgundy-light); }
+    .btn-outline-gold { background: transparent; color: var(--gold-light); border: 2px solid var(--gold); }
+    .btn-outline-gold:hover { background: var(--gold); color: var(--ink); }
+    .btn-outline-dark { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+    .btn-outline-dark:hover { background: var(--ink); color: var(--cream); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: var(--ink);
+      padding: 0 32px 80px;
+      text-align: center;
+      border-bottom: 2px solid rgba(184,145,58,0.3);
+    }
+    .hero-kicker {
+      font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); padding: 28px 0 20px;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 6vw, 4.8rem);
+      font-weight: 700; line-height: 1.08; color: #fff;
+      margin-bottom: 20px; letter-spacing: -0.01em;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold-light); }
+    .hero .sub {
+      font-size: 1rem; color: #999; max-width: 520px;
+      margin: 0 auto 36px; line-height: 1.7;
+    }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== TIMELINE SECTION ===== */
+    .origin { background: var(--warm-white); }
+    .timeline { margin-top: 64px; position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 50%; top: 0; bottom: 0;
+      width: 2px; background: linear-gradient(to bottom, var(--gold), rgba(184,145,58,0.15));
+      transform: translateX(-50%);
+    }
+    .tl-item {
+      display: grid; grid-template-columns: 1fr 60px 1fr;
+      gap: 0; margin-bottom: 72px; align-items: start;
+    }
+    .tl-item:last-child { margin-bottom: 0; }
+    /* Alternate: odd items → text left, photo right; even → photo left, text right */
+    .tl-item:nth-child(even) .tl-text { order: 3; text-align: left; padding-left: 48px; padding-right: 0; }
+    .tl-item:nth-child(even) .tl-center { order: 2; }
+    .tl-item:nth-child(even) .tl-photo { order: 1; padding-right: 48px; padding-left: 0; }
+    .tl-item:nth-child(odd) .tl-text { order: 1; text-align: right; padding-right: 48px; }
+    .tl-item:nth-child(odd) .tl-center { order: 2; }
+    .tl-item:nth-child(odd) .tl-photo { order: 3; padding-left: 48px; }
+    .tl-center {
+      display: flex; flex-direction: column; align-items: center;
+      padding-top: 6px;
+    }
+    .tl-dot {
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--gold); border: 3px solid var(--warm-white);
+      box-shadow: 0 0 0 2px var(--gold);
+      flex-shrink: 0;
+    }
+    .tl-year-badge {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+      color: var(--gold); background: var(--warm-white);
+      padding: 3px 6px; margin-top: 8px;
+      white-space: nowrap;
+    }
+    .tl-text { padding-top: 4px; }
+    .tl-text h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 700; color: var(--ink);
+      margin-bottom: 10px; line-height: 1.2;
+    }
+    .tl-text p { font-size: 0.93rem; line-height: 1.75; color: var(--text-muted); }
+    .tl-placeholder-note {
+      display: inline-block; margin-top: 10px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #fff;
+      background: var(--burgundy); padding: 3px 9px; border-radius: 2px;
+      opacity: 0.85;
+    }
+    .tl-photo { position: relative; }
+    .tl-photo img {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover;
+      border-radius: 3px;
+      border: 2px solid rgba(184,145,58,0.4);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+      display: block;
+    }
+    .tl-photo-placeholder {
+      width: 100%; aspect-ratio: 4/3;
+      background: var(--cream-dark);
+      border: 2px dashed rgba(184,145,58,0.4);
+      border-radius: 3px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 8px;
+    }
+    .tl-photo-placeholder span:first-child { font-size: 2rem; opacity: 0.3; }
+    .tl-photo-placeholder span:last-child {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: #aaa;
+    }
+    @media (max-width: 760px) {
+      .timeline::before { left: 20px; }
+      .tl-item { grid-template-columns: 40px 1fr; grid-template-rows: auto auto; gap: 0; }
+      .tl-item:nth-child(odd) .tl-text,
+      .tl-item:nth-child(even) .tl-text { order: 2; text-align: left; padding: 0 0 20px 20px; }
+      .tl-item:nth-child(odd) .tl-center,
+      .tl-item:nth-child(even) .tl-center { order: 1; grid-row: 1 / 3; }
+      .tl-item:nth-child(odd) .tl-photo,
+      .tl-item:nth-child(even) .tl-photo { order: 3; padding: 0 0 0 20px; grid-column: 2; }
+      .tl-year-badge { font-size: 0.65rem; }
+    }
+
+    /* ===== PROCESS SECTION ===== */
+    .process { background: var(--ink); }
+    .process-cards {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+      margin-top: 48px;
+    }
+    .process-card {
+      background: #1f1710;
+      border: 1px solid rgba(184,145,58,0.15);
+      padding: 36px 28px;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .process-card:hover { background: rgba(184,145,58,0.06); border-color: rgba(184,145,58,0.4); }
+    .process-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem; font-weight: 700; line-height: 1;
+      color: rgba(184,145,58,0.25); margin-bottom: 16px;
+    }
+    .process-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; font-weight: 600; color: #fff;
+      margin-bottom: 12px;
+    }
+    .process-card p { font-size: 0.9rem; line-height: 1.7; color: #888; }
+    .process-cta { margin-top: 52px; }
+
+    /* ===== EVENTS SECTION ===== */
+    .events { background: var(--cream); }
+    .events-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      margin-top: 48px;
+    }
+    .event-card {
+      background: #fff;
+      border-top: 3px solid var(--gold);
+      padding: 36px 28px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .event-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.12); transform: translateY(-4px); }
+    .event-icon { font-size: 2rem; margin-bottom: 18px; }
+    .event-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 700; color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .event-card p { font-size: 0.92rem; line-height: 1.75; color: var(--text-muted); }
+    .events-cta { margin-top: 48px; }
+
+    /* ===== REVIEWS SECTION ===== */
+    .reviews { background: var(--ink); }
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+      margin-top: 48px;
+    }
+    .review-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(184,145,58,0.18);
+      padding: 32px 28px; border-radius: 3px;
+    }
+    .review-stars { color: var(--gold-light); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 16px; }
+    .review-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-style: italic; line-height: 1.7;
+      color: #ccc; margin-bottom: 20px;
+    }
+    .review-meta { display: flex; justify-content: space-between; align-items: center; }
+    .review-author { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+    .review-source { font-size: 0.72rem; color: #555; text-transform: uppercase; letter-spacing: 0.08em; }
+    .reviews-cta { margin-top: 48px; text-align: center; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0d0a06;
+      border-top: 2px solid var(--gold);
+      padding: 56px 32px 28px;
+    }
+    .footer-grid {
+      max-width: 1060px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.4fr 1fr;
+      gap: 64px; padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; color: var(--gold-light); font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .footer-brand p {
+      font-size: 0.87rem; color: #666; line-height: 1.7; margin-bottom: 20px;
+    }
+    .fb-link {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: #1877f2; color: #fff;
+      padding: 9px 16px; border-radius: 3px;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: opacity 0.2s;
+    }
+    .fb-link:hover { opacity: 0.85; }
+    .fb-link svg { width: 16px; height: 16px; fill: #fff; }
+    footer h4 {
+      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px; font-weight: 700;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 9px; }
+    .footer-links a { font-size: 0.87rem; color: #777; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold-light); }
+    .footer-nap { list-style: none; }
+    .footer-nap li {
+      font-size: 0.87rem; color: #777; margin-bottom: 7px; line-height: 1.5;
+    }
+    .footer-nap a { color: var(--gold-light); }
+    .footer-nap .hours-label { color: #555; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 14px; margin-bottom: 6px; display: block; }
+    .footer-nap .hours-note { font-size: 0.75rem; color: #555; font-style: italic; }
+    .footer-bottom {
+      max-width: 1060px; margin: 24px auto 0;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.75rem; color: #444; flex-wrap: wrap; gap: 8px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 960px) {
+      nav, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .origin-grid { grid-template-columns: 1fr; }
+      .origin-year { font-size: 2.5rem; top: -12px; left: -12px; padding: 12px 16px; }
+      .process-cards { grid-template-columns: 1fr 1fr; }
+      .events-grid { grid-template-columns: 1fr 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 64px 20px; }
+      header { }
+      .header-inner { padding: 0 20px; }
+      .hero { padding: 0 20px 60px; }
+      .process-cards { grid-template-columns: 1fr; }
+      .events-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="https://thebookmrketjoliet.com" class="logo-wrap">
+      <div class="logo-icon">📚</div>
+      <div class="logo-text">
+        <div class="name">The Book Market</div>
+        <div class="sub">Crest Hill, IL · Est. 1977</div>
+      </div>
+    </a>
+    <nav>
+      <a href="https://thebookmrketjoliet.com" class="active">Home</a>
+      <a href="https://thebookmrketjoliet.com/trade">Trade &amp; Buy</a>
+      <a href="https://thebookmrketjoliet.com/events">Events</a>
+      <a href="https://thebookmrketjoliet.com/reviews">Reviews</a>
+      <a href="https://thebookmrketjoliet.com/contact" class="nav-cta">Contact</a>
+    </nav>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="https://thebookmrketjoliet.com">Home</a>
+  <a href="https://thebookmrketjoliet.com/trade">Trade &amp; Buy</a>
+  <a href="https://thebookmrketjoliet.com/events">Events</a>
+  <a href="https://thebookmrketjoliet.com/reviews">Reviews</a>
+  <a href="https://thebookmrketjoliet.com/contact">Contact &amp; Hours</a>
+  <div class="m-contact"><a href="tel:8157444240">(815) 744-4240</a></div>
+</div>
+
+<!-- VIDEO -->
+<div class="video-section">
+  <div class="video-inner">
+    <div class="video-eyebrow">Welcome to The Book Market</div>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/b00r18AEXuc" title="The Book Market Video Tour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-kicker">📚 &nbsp; Proudly Serving Chicagoland Since 1977 &nbsp; 📚</div>
+  <h1>Crest Hill's Beloved<br><em>Used Bookstore</em></h1>
+  <p class="sub">Thousands of titles. Unbeatable prices. A community gathering place for readers of every kind.</p>
+  <div class="hero-btns">
+    <a href="https://thebookmrketjoliet.com/trade" class="btn btn-primary">Trade &amp; Buy Books</a>
+    <a href="https://thebookmrketjoliet.com/contact" class="btn btn-outline-gold">Hours &amp; Directions</a>
+  </div>
+</div>
+
+<!-- ORIGIN TIMELINE -->
+<section class="section origin">
+  <div class="section-inner">
+    <div class="eyebrow">Our Story</div>
+    <h2 class="heading">Nearly Five Decades<br><em>In the Making</em></h2>
+    <div class="rule"></div>
+    <p class="body-text">The Book Market has been part of the Crest Hill and Joliet community longer than most of its customers have been alive. Here's how we got here.</p>
+
+    <div class="timeline">
+
+      <!-- 1 -->
+      <div class="tl-item">
+        <div class="tl-text">
+          <h3>The Doors Open</h3>
+          <p>The Book Market opens at 2365 Plainfield Rd. in Crest Hill, Illinois — a modest storefront with big ambitions. From day one, the mission is simple: put great books into the hands of everyday readers at prices anyone can afford.</p>
+        </div>
+        <div class="tl-center">
+          <div class="tl-dot"></div>
+          <div class="tl-year-badge">1977</div>
+        </div>
+        <div class="tl-photo">
+          <img src="https://du9m0k402rjmo.cloudfront.net/images/P_20505/4ad28634-6e7c-4e55-865a-2f962d5642ae.jpg" alt="The Book Market storefront" />
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="tl-item">
+        <div class="tl-text">
+          <h3>[Milestone Title]</h3>
+          <p>[Description of this milestone in the store's history — e.g. a major expansion, a community partnership, a memorable event, or a turning point. Please provide this content.]</p>
+          <span class="tl-placeholder-note">⚠ Placeholder — confirm with owner</span>
+        </div>
+        <div class="tl-center">
+          <div class="tl-dot"></div>
+          <div class="tl-year-badge">[Year]</div>
+        </div>
+        <div class="tl-photo">
+          <div class="tl-photo-placeholder">
+            <span>📷</span>
+            <span>Photo Needed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="tl-item">
+        <div class="tl-text">
+          <h3>[Milestone Title]</h3>
+          <p>[Description of this milestone — perhaps the introduction of monthly book signings, a major inventory expansion, or the start of a community reading program.]</p>
+          <span class="tl-placeholder-note">⚠ Placeholder — confirm with owner</span>
+        </div>
+        <div class="tl-center">
+          <div class="tl-dot"></div>
+          <div class="tl-year-badge">[Year]</div>
+        </div>
+        <div class="tl-photo">
+          <div class="tl-photo-placeholder">
+            <span>📷</span>
+            <span>Photo Needed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="tl-item">
+        <div class="tl-text">
+          <h3>[Milestone Title]</h3>
+          <p>[Description of this milestone — perhaps a renovation, a notable author visit, or a recognition the store received from the local community or press.]</p>
+          <span class="tl-placeholder-note">⚠ Placeholder — confirm with owner</span>
+        </div>
+        <div class="tl-center">
+          <div class="tl-dot"></div>
+          <div class="tl-year-badge">[Year]</div>
+        </div>
+        <div class="tl-photo">
+          <div class="tl-photo-placeholder">
+            <span>📷</span>
+            <span>Photo Needed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="tl-item">
+        <div class="tl-text">
+          <h3>A Nextdoor Neighborhood Favorite</h3>
+          <p>The Book Market earns Nextdoor's Neighborhood Favorite distinction — voted by the very neighbors it has served for decades. Recognition across nine neighborhoods in the greater Joliet and Chicagoland area, a testament to over 45 years of community trust.</p>
+        </div>
+        <div class="tl-center">
+          <div class="tl-dot"></div>
+          <div class="tl-year-badge">2023</div>
+        </div>
+        <div class="tl-photo">
+          <div class="tl-photo-placeholder">
+            <span>📷</span>
+            <span>Photo Needed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="tl-item">
+        <div class="tl-text">
+          <h3>Still Here. Still Growing.</h3>
+          <p>Nearly five decades after opening day, The Book Market remains independently owned and operated — the same corner, the same commitment. New titles arrive daily, new readers discover us for the first time, and longtime customers keep coming back. The story isn't finished yet.</p>
+        </div>
+        <div class="tl-center">
+          <div class="tl-dot"></div>
+          <div class="tl-year-badge">Today</div>
+        </div>
+        <div class="tl-photo">
+          <img src="https://du9m0k402rjmo.cloudfront.net/images/P_20505/4ad28634-6e7c-4e55-865a-2f962d5642ae.jpg" alt="The Book Market today" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRADE & BUY PROCESS -->
+<section class="section process">
+  <div class="section-inner">
+    <div class="eyebrow eyebrow-light">How It Works</div>
+    <h2 class="heading heading-light">Buy, Trade &amp; <em style="color:var(--gold-light);">Give Back</em></h2>
+    <div class="rule"></div>
+    <p class="body-text body-text-light">We've built a simple, fair system that keeps books circulating and money in your pocket. Whether you're shopping, selling, or donating — there's a place for you here.</p>
+    <div class="process-cards">
+      <div class="process-card">
+        <div class="process-num">01</div>
+        <h3>We Accept Donations</h3>
+        <p>Have books you've finished with? Drop them off. Every donation extends the life of a great read and keeps prices low for our entire community.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">02</div>
+        <h3>Trade Your Books</h3>
+        <p>Bring in books you no longer need and trade them in — it's a simple, no-fuss exchange that lets you walk out with something new to read.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">03</div>
+        <h3>Shop at 40% Off</h3>
+        <p>Every book on our shelves is priced at 40% off the original publisher's price. A full bookshelf has never cost so little.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">04</div>
+        <h3>Earn Store Credit</h3>
+        <p>Looking to sell? Bring your books in and we'll evaluate them on the spot. Receive store credit to put toward your next great read.</p>
+      </div>
+    </div>
+    <div class="process-cta">
+      <a href="https://thebookmrketjoliet.com/trade" class="btn btn-outline-gold">Learn More About Trading &amp; Buying</a>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="section events">
+  <div class="section-inner">
+    <div class="eyebrow">At The Store</div>
+    <h2 class="heading">More Than a Bookstore —<br><em>A Gathering Place</em></h2>
+    <div class="rule"></div>
+    <p class="body-text">Throughout the year, The Book Market hosts events that celebrate local storytelling, the joy of reading, and the writers who make it all possible. Everyone is welcome.</p>
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-icon">✍️</div>
+        <h3>Book Signings</h3>
+        <p>Meet the authors behind the titles you love. Our book signings bring published writers — both emerging and established — directly to the community for an up-close, personal experience.</p>
+      </div>
+      <div class="event-card">
+        <div class="event-icon">🌟</div>
+        <h3>Local Author Spotlights</h3>
+        <p>We believe in uplifting the creative voices right here in the Joliet and Chicagoland area. Our author spotlights shine a light on local talent and help readers discover stories from their own backyard.</p>
+      </div>
+      <div class="event-card">
+        <div class="event-icon">📖</div>
+        <h3>Book Readings</h3>
+        <p>There's nothing quite like hearing a story read aloud. From children's readings to adult fiction nights, our readings make literature a shared, communal experience for all ages.</p>
+      </div>
+    </div>
+    <div class="events-cta">
+      <a href="https://thebookmrketjoliet.com/events" class="btn btn-outline-dark">See Upcoming Events</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews">
+  <div class="section-inner">
+    <div class="eyebrow eyebrow-light">What Customers Say</div>
+    <h2 class="heading heading-light">Loved by <em style="color:var(--gold-light);">Readers</em></h2>
+    <div class="rule"></div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"This place is a hidden gem. I've been coming here for years and always leave with an armful of books for just a few dollars. The staff are wonderful and so knowledgeable."</p>
+        <div class="review-meta">
+          <span class="review-author">— Linda M.</span>
+          <span class="review-source">Google</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Best used bookstore in the area, hands down. Incredible selection, super organized, and the prices are unbeatable. I will never pay full price for a book again."</p>
+        <div class="review-meta">
+          <span class="review-author">— James T.</span>
+          <span class="review-source">Google</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"A true community treasure. They've been around since before I was born and I hope they never leave. Friendly, local, and packed with fantastic reads at prices anyone can afford."</p>
+        <div class="review-meta">
+          <span class="review-author">— Patricia R.</span>
+          <span class="review-source">Google</span>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-cta">
+      <a href="https://thebookmrketjoliet.com/reviews" class="btn btn-outline-gold">Read All Reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-brand-name">The Book Market Sales &amp; Trading Center</div>
+      <p>Serving the Joliet, Crest Hill &amp; Chicagoland communities with quality used books since 1977.</p>
+      <a href="https://www.facebook.com/newandusedbooks/" target="_blank" rel="noopener" class="fb-link">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Follow on Facebook
+      </a>
+    </div>
+    <div>
+      <h4>Visit Us</h4>
+      <ul class="footer-nap">
+        <li>2365 Plainfield Rd.</li>
+        <li>Crest Hill, IL 60403</li>
+        <li><a href="tel:8157444240">(815) 744-4240</a></li>
+        <li><a href="mailto:thebookmarketjoliet@gmail.com">thebookmarketjoliet@gmail.com</a></li>
+        <span class="hours-label">Store Hours</span>
+        <li>Tuesday – Friday: 11:00 AM – 5:00 PM</li>
+        <li>Saturday: 11:00 AM – 5:00 PM</li>
+        <li>Sunday &amp; Monday: Closed</li>
+        <li class="hours-note">Holiday hours may vary. Please call for details.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 The Book Market Sales &amp; Trading Center. All rights reserved.</span>
+    <span>2365 Plainfield Rd., Crest Hill, IL 60403</span>
+  </div>
+</footer>
+
+<script>
+  const ham = document.getElementById('hamburger');
+  const mob = document.getElementById('mobileMenu');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    mob.classList.toggle('open');
+  });
+</script>
+</body>
+</html>
